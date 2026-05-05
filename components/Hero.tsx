@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] rounded-full bg-beige/[0.10]" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-8 w-full py-16 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
           {/* Content */}
           <AnimatedSection>
@@ -69,40 +69,40 @@ export default function Hero() {
           </AnimatedSection>
 
           {/* Visual */}
-          <AnimatedSection delay={150} className="hidden lg:flex justify-center">
-            <div className="relative w-full max-w-[420px]">
+          <AnimatedSection delay={150} className="flex justify-center order-first lg:order-none">
+            <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[420px]">
 
-              {/* Main photo — fondo beige natural de la foto, sin recorte agresivo */}
-              <div className="w-full aspect-[3/4] rounded-[2.5rem] overflow-hidden relative">
+              {/* Main photo */}
+              <div className="w-full aspect-[3/4] rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden relative">
                 <Image
                   src="/foto-yerlina-principal.png"
                   alt="Yerlina — Coach Mi Vida en Forma"
                   fill
                   className="object-cover object-center hover:scale-[1.03] transition-transform duration-700 ease-out"
-                  sizes="420px"
+                  sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 420px"
                   priority
                 />
               </div>
 
-              {/* Float card — bottom right */}
-              <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl p-4 shadow-lg flex items-center gap-3 border border-ink-dark/[0.05] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                <div className="w-10 h-10 bg-green-pale rounded-xl flex items-center justify-center flex-shrink-0">
-                  <IconTrophy className="w-5 h-5 text-green-dark" />
+              {/* Float card — bottom right (visible desde sm) */}
+              <div className="absolute -bottom-4 -right-3 sm:-bottom-5 sm:-right-5 bg-white rounded-2xl p-3 sm:p-4 shadow-lg flex items-center gap-2.5 sm:gap-3 border border-ink-dark/[0.05] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-pale rounded-xl flex items-center justify-center flex-shrink-0">
+                  <IconTrophy className="w-4 h-4 sm:w-5 sm:h-5 text-green-dark" />
                 </div>
                 <div>
-                  <p className="text-[0.8rem] font-semibold text-ink-dark leading-tight">Método 360°</p>
-                  <p className="text-[0.7rem] text-ink-light">Cuerpo · Mente · Hábitos</p>
+                  <p className="text-[0.75rem] sm:text-[0.8rem] font-semibold text-ink-dark leading-tight">Método 360°</p>
+                  <p className="text-[0.65rem] sm:text-[0.7rem] text-ink-light">Cuerpo · Mente · Hábitos</p>
                 </div>
               </div>
 
-              {/* Float card — top left */}
-              <div className="absolute -top-5 -left-5 bg-white rounded-2xl p-4 shadow-lg flex items-center gap-3 border border-ink-dark/[0.05] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                <div className="w-10 h-10 bg-green-pale rounded-xl flex items-center justify-center flex-shrink-0">
-                  <IconSparkle className="w-5 h-5 text-green-dark" />
+              {/* Float card — top left (visible desde sm) */}
+              <div className="absolute -top-4 -left-3 sm:-top-5 sm:-left-5 bg-white rounded-2xl p-3 sm:p-4 shadow-lg flex items-center gap-2.5 sm:gap-3 border border-ink-dark/[0.05] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-pale rounded-xl flex items-center justify-center flex-shrink-0">
+                  <IconSparkle className="w-4 h-4 sm:w-5 sm:h-5 text-green-dark" />
                 </div>
                 <div>
-                  <p className="text-[0.8rem] font-semibold text-ink-dark leading-tight">+20 años</p>
-                  <p className="text-[0.7rem] text-ink-light">de experiencia</p>
+                  <p className="text-[0.75rem] sm:text-[0.8rem] font-semibold text-ink-dark leading-tight">+20 años</p>
+                  <p className="text-[0.65rem] sm:text-[0.7rem] text-ink-light">de experiencia</p>
                 </div>
               </div>
             </div>
