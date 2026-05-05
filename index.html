@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Vida en Forma | Coaching Online para Mujeres +35 | Yerlina</title>
+    <meta name="description" content="Coaching online especializado en mujeres +35. Pierde grasa, combate la inflamación y construye hábitos duraderos con el método de Yerlina. Vive más joven por más tiempo.">
+    <meta name="keywords" content="coaching online mujeres, nutrición mujer 35, perder peso mujeres, inflamación, hábitos saludables, coaching fitness online, Mi Vida en Forma, Yerlina">
+    <meta name="author" content="Yerlina - Mi Vida en Forma">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.mvf.coach/">
+    <meta property="og:title" content="Mi Vida en Forma | Vive más joven por más tiempo">
+    <meta property="og:description" content="Coaching online especializado en mujeres +35. Pierde grasa, combate la inflamación y construye hábitos duraderos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mvf.coach/">
+    <meta property="og:locale" content="es_ES">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mi Vida en Forma | Coaching Online para Mujeres +35">
+    <meta name="twitter:description" content="Vive más joven por más tiempo. Coaching online especializado en mujeres +35.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Mi Vida en Forma",
+      "description": "Coaching online especializado en mujeres +35. Nutrición, entrenamiento y hábitos.",
+      "url": "https://www.mvf.coach/",
+      "founder": { "@type": "Person", "name": "Yerlina" },
+      "serviceType": ["Coaching nutricional", "Entrenamiento personal online", "Coaching de hábitos"]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-dark:   #4A6741;
+            --green-mid:    #6B8C57;
+            --green-light:  #8FA882;
+            --green-pale:   #EFF3EB;
+            --green-xpale:  #F5F8F3;
+            --beige:        #C4B49A;
+            --beige-light:  #F0EBE3;
+            --warm-white:   #FAF8F5;
+            --gold:         #C9A84C;
+            --text-dark:    #2C3A28;
+            --text-mid:     #4A5A46;
+            --text-light:   #7A8C76;
+            --white:        #FFFFFF;
+            --font-serif:   'Playfair Display', Georgia, serif;
+            --font-sans:    'Inter', system-ui, sans-serif;
+            --shadow-sm:    0 2px 8px rgba(44,58,40,.08);
+            --shadow-md:    0 8px 32px rgba(44,58,40,.12);
+            --shadow-lg:    0 16px 48px rgba(44,58,40,.18);
+            --radius-sm:    8px;
+            --radius-md:    16px;
+            --radius-lg:    24px;
+            --radius-xl:    40px;
+            --ease:         cubic-bezier(.4,0,.2,1);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); color: var(--text-dark); background: var(--warm-white); line-height: 1.6; overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        h1,h2,h3,h4 { font-family: var(--font-serif); line-height: 1.2; color: var(--text-dark); }
+        h1 { font-size: clamp(2.4rem,5vw,4rem); }
+        h2 { font-size: clamp(1.9rem,3.5vw,3rem); }
+        h3 { font-size: clamp(1.2rem,2vw,1.6rem); }
+        p  { font-size: clamp(.95rem,1.5vw,1.05rem); color: var(--text-mid); line-height: 1.8; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem,4vw,2rem); }
+        .section { padding: clamp(4rem,8vw,7rem) 0; }
+        .label { font-size: .78rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--green-mid); margin-bottom: .75rem; display: block; }
+        .text-center { text-align: center; }
+        .text-center p { margin-inline: auto; }
+
+        /* ── BUTTONS ── */
+        .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .9rem 2rem; border-radius: 100px; font-family: var(--font-sans); font-size: .95rem; font-weight: 600; cursor: pointer; transition: .3s var(--ease); border: none; }
+        .btn svg { width: 17px; height: 17px; transition: transform .3s var(--ease); }
+        .btn:hover svg { transform: translateX(3px); }
+        .btn-primary { background: var(--green-dark); color: var(--white); }
+        .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline { background: transparent; color: var(--green-dark); border: 2px solid var(--green-dark); }
+        .btn-outline:hover { background: var(--green-dark); color: var(--white); transform: translateY(-2px); }
+        .btn-white { background: var(--white); color: var(--green-dark); }
+        .btn-white:hover { background: var(--green-pale); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-lg { padding: 1.1rem 2.6rem; font-size: 1.05rem; }
+
+        /* ── NAVBAR ── */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 0; transition: .35s var(--ease); }
+        .navbar.scrolled { background: rgba(255,255,255,.95); backdrop-filter: blur(14px); padding: .8rem 0; box-shadow: var(--shadow-sm); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+        .nav-logo { display: flex; align-items: center; gap: .7rem; font-family: var(--font-serif); font-size: 1.05rem; font-weight: 700; color: var(--text-dark); }
+        .nav-logo img { width: 42px; height: 42px; object-fit: contain; }
+        .nav-logo .sub { display: block; font-family: var(--font-sans); font-size: .65rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--text-light); line-height: 1; }
+        .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-links a { font-size: .88rem; font-weight: 500; color: var(--text-mid); transition: color .25s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--green-mid); transition: width .3s var(--ease); }
+        .nav-links a:hover { color: var(--green-dark); }
+        .nav-links a:hover::after { width: 100%; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-dark); transition: .3s var(--ease); border-radius: 2px; }
+
+        /* ── MOBILE MENU ── */
+        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--white); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a { font-family: var(--font-serif); font-size: 1.8rem; color: var(--text-dark); transition: color .25s; }
+        .mobile-menu a:hover { color: var(--green-mid); }
+        .m-close { position: absolute; top: 1.5rem; right: 1.5rem; width: 44px; height: 44px; background: var(--green-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.1rem; border: none; color: var(--text-dark); }
+
+        /* ── HERO ── */
+        .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--green-xpale) 0%, var(--warm-white) 55%, var(--beige-light) 100%); padding-top: 5rem; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -20%; right: -8%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(107,140,87,.07) 0%, transparent 70%); pointer-events: none; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero-chip { display: inline-flex; align-items: center; gap: .5rem; background: rgba(107,140,87,.1); border: 1px solid rgba(107,140,87,.2); color: var(--green-dark); padding: .35rem 1rem; border-radius: 100px; font-size: .78rem; font-weight: 600; letter-spacing: .05em; margin-bottom: 1.5rem; }
+        .hero-chip::before { content: '✦'; color: var(--gold); }
+        .hero h1 { margin-bottom: 1.5rem; }
+        .hero h1 em { font-style: italic; color: var(--green-mid); }
+        .hero-desc { font-size: 1.1rem; max-width: 480px; margin-bottom: 2.5rem; }
+        .hero-ctas { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 3rem; }
+        .hero-proof { display: flex; align-items: center; gap: 1rem; }
+        .faces { display: flex; }
+        .face { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--white); background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-left: -9px; }
+        .face:first-child { margin-left: 0; }
+        .proof-text strong { display: block; font-size: .875rem; color: var(--text-dark); font-weight: 600; }
+        .proof-text span { font-size: .8rem; color: var(--text-light); }
+        .hero-visual { position: relative; display: flex; justify-content: center; }
+        .hero-img { width: 100%; max-width: 460px; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--green-pale), var(--beige-light)); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+        .hero-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(107,140,87,.06), rgba(196,180,154,.15)); }
+        .hero-img-inner { text-align: center; padding: 2rem; position: relative; z-index: 1; }
+        .hero-img-inner img { width: 110px; margin: 0 auto 1rem; opacity: .55; }
+        .hero-img-inner p { color: var(--green-dark); font-size: .82rem; font-style: italic; }
+        .float-card { position: absolute; background: var(--white); border-radius: var(--radius-md); padding: 1rem 1.25rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: .75rem; }
+        .float-card.bottom { bottom: 2rem; right: -1rem; }
+        .float-card.top { top: 2rem; left: -1rem; }
+        .float-icon { width: 42px; height: 42px; background: var(--green-pale); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+        .float-card strong { display: block; font-size: .875rem; font-weight: 600; color: var(--text-dark); line-height: 1.2; }
+        .float-card span { font-size: .73rem; color: var(--text-light); }
+
+        /* ── STATS ── */
+        .stats { background: var(--green-dark); padding: 2.5rem 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+        .stat { text-align: center; padding: 0 1.5rem; border-right: 1px solid rgba(255,255,255,.12); }
+        .stat:last-child { border-right: none; }
+        .stat-n { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 700; color: var(--white); line-height: 1; margin-bottom: .35rem; }
+        .stat-l { font-size: .82rem; color: rgba(255,255,255,.65); }
+
+        /* ── METHOD ── */
+        .method { background: var(--warm-white); }
+        .method-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
+        .method-visual { display: flex; justify-content: center; }
+        .method-circle { width: min(380px,100%); aspect-ratio: 1; background: var(--green-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .method-circle img { width: 65%; opacity: .7; }
+        .pillars { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
+        .pillar { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.4rem; background: var(--green-xpale); border-radius: var(--radius-md); border: 1px solid transparent; transition: .3s var(--ease); }
+        .pillar:hover { border-color: rgba(107,140,87,.2); box-shadow: var(--shadow-sm); transform: translateX(5px); }
+        .p-icon { width: 46px; height: 46px; min-width: 46px; background: var(--green-dark); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+        .p-text h4 { font-family: var(--font-serif); font-size: 1.05rem; margin-bottom: .25rem; }
+        .p-text p { font-size: .875rem; margin: 0; }
+
+        /* ── PROGRAMS ── */
+        .programs { background: var(--beige-light); }
+        .prog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+        .prog-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: .3s var(--ease); display: flex; flex-direction: column; }
+        .prog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+        .prog-img { width: 100%; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 3rem; position: relative; }
+        .prog-tag { position: absolute; top: 1rem; left: 1rem; background: var(--green-dark); color: var(--white); padding: .28rem .75rem; border-radius: 100px; font-size: .7rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
+        .prog-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+        .prog-body h3 { margin-bottom: .7rem; font-size: 1.2rem; }
+        .prog-body > p { font-size: .88rem; flex: 1; margin-bottom: 1.5rem; }
+        .prog-features { list-style: none; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: .45rem; }
+        .prog-features li { display: flex; align-items: center; gap: .5rem; font-size: .85rem; color: var(--text-mid); }
+        .prog-features li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
+
+        /* ── HOW IT WORKS ── */
+        .how { background: var(--warm-white); }
+        .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 3rem; margin-top: 4rem; position: relative; }
+        .steps::before { content: ''; position: absolute; top: 31px; left: calc(16.7% + 30px); right: calc(16.7% + 30px); height: 2px; background: linear-gradient(90deg, var(--green-mid), var(--green-light)); }
+        .step { text-align: center; position: relative; z-index: 1; }
+        .step-n { width: 62px; height: 62px; background: var(--green-dark); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; box-shadow: 0 0 0 8px var(--warm-white), 0 0 0 10px rgba(107,140,87,.2); }
+        .step h3 { font-size: 1.1rem; margin-bottom: .6rem; }
+        .step p { font-size: .875rem; }
+
+        /* ── FEATURES ── */
+        .features { background: var(--green-xpale); }
+        .feat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.25rem; margin-top: 3.5rem; }
+        .feat-card { background: var(--white); border-radius: var(--radius-md); padding: 1.75rem; display: flex; gap: 1.25rem; border: 1px solid transparent; transition: .3s var(--ease); }
+        .feat-card:hover { border-color: rgba(107,140,87,.2); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+        .feat-icon { width: 54px; height: 54px; min-width: 54px; background: var(--green-pale); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .feat-text h4 { font-family: var(--font-serif); font-size: 1rem; margin-bottom: .4rem; }
+        .feat-text p { font-size: .85rem; margin: 0; }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials { background: var(--warm-white); }
+        .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+        .testi-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: .3s var(--ease); }
+        .testi-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+        .testi-imgs { display: grid; grid-template-columns: 1fr 1fr; }
+        .testi-ph { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+        .testi-body { padding: 1.4rem; }
+        .stars { color: var(--gold); letter-spacing: 2px; font-size: .9rem; margin-bottom: .6rem; }
+        .testi-body p { font-size: .875rem; font-style: italic; margin-bottom: .8rem; }
+        .testi-body strong { font-size: .82rem; color: var(--text-dark); font-weight: 600; }
+
+        /* ── ABOUT ── */
+        .about { background: var(--beige-light); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center; }
+        .about-img-wrap { position: relative; }
+        .about-img { width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--green-pale), var(--beige-light)); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .about-img-inner { text-align: center; padding: 2rem; }
+        .about-img-inner img { width: 100px; margin: 0 auto 1rem; opacity: .5; }
+        .about-img-inner p { color: var(--green-dark); font-size: .82rem; font-style: italic; }
+        .creds { position: absolute; bottom: 2rem; right: -1.5rem; background: var(--white); border-radius: var(--radius-md); padding: 1.25rem; box-shadow: var(--shadow-lg); min-width: 190px; }
+        .cred { display: flex; align-items: center; gap: .5rem; font-size: .78rem; color: var(--text-mid); margin-bottom: .5rem; }
+        .cred:last-child { margin-bottom: 0; }
+        .cred-dot { width: 7px; height: 7px; background: var(--green-mid); border-radius: 50%; flex-shrink: 0; }
+        .about-content .lead { font-size: 1.1rem; color: var(--text-dark); font-weight: 500; margin-bottom: 1.2rem; }
+        .highlights { display: flex; gap: 2.5rem; margin: 2.5rem 0; }
+        .hl-item .num { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--green-dark); display: block; }
+        .hl-item .lbl { font-size: .78rem; color: var(--text-light); }
+
+        /* ── FAQ ── */
+        .faq { background: var(--warm-white); }
+        .faq-list { max-width: 760px; margin: 3.5rem auto 0; }
+        .faq-item { border-bottom: 1px solid rgba(107,140,87,.15); }
+        .faq-q { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.4rem 0; cursor: pointer; font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; color: var(--text-dark); transition: color .25s; }
+        .faq-q:hover { color: var(--green-dark); }
+        .faq-ic { width: 30px; height: 30px; min-width: 30px; background: var(--green-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--green-dark); font-size: 1.2rem; line-height: 1; transition: .35s var(--ease); }
+        .faq-item.open .faq-ic { background: var(--green-dark); color: var(--white); transform: rotate(45deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+        .faq-a p { padding-bottom: 1.4rem; font-size: .93rem; }
+        .faq-item.open .faq-a { max-height: 400px; }
+
+        /* ── CTA SECTION ── */
+        .cta-sec { background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%); padding: clamp(4rem,8vw,7rem) 0; text-align: center; position: relative; overflow: hidden; }
+        .cta-sec::before { content: ''; position: absolute; top: -40%; left: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,255,255,.04), transparent 70%); pointer-events: none; }
+        .cta-sec h2 { color: var(--white); margin-bottom: .75rem; }
+        .cta-sec p { color: rgba(255,255,255,.78); max-width: 500px; margin: 0 auto 2.5rem; }
+        .cta-note { margin-top: 1.1rem; font-size: .8rem; color: rgba(255,255,255,.5); }
+
+        /* ── FOOTER ── */
+        .footer { background: var(--text-dark); padding: 4rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand .nav-logo { color: var(--white); margin-bottom: 1rem; }
+        .footer-brand p { font-size: .85rem; color: rgba(255,255,255,.45); max-width: 280px; }
+        .footer-col h5 { font-family: var(--font-sans); font-size: .75rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 1.2rem; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+        .footer-col ul a { font-size: .875rem; color: rgba(255,255,255,.6); transition: color .25s; }
+        .footer-col ul a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.3); }
+        .social-links { display: flex; gap: .75rem; }
+        .social-link { width: 36px; height: 36px; background: rgba(255,255,255,.07); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.55); transition: .25s var(--ease); }
+        .social-link:hover { background: var(--green-mid); color: var(--white); }
+
+        /* ── FADE IN ── */
+        .fi { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+        .fi.v { opacity: 1; transform: translateY(0); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
+            .method-grid, .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links, .nav-btn { display: none; }
+            .hamburger { display: flex; }
+            .stats-grid { grid-template-columns: repeat(2,1fr); }
+            .stat:nth-child(2) { border-right: none; }
+            .prog-grid, .steps, .testi-grid { grid-template-columns: 1fr; }
+            .steps::before { display: none; }
+            .feat-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .creds { position: static; margin-top: 1.5rem; min-width: auto; }
+            .hero-ctas { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo">
+        <img src="logo-mvef.png" alt="Mi Vida en Forma">
+        <span>Mi Vida en Forma <span class="sub">Con Yerlina</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#metodo">Mi método</a></li>
+        <li><a href="#programas">Programas</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <a href="#contacto" class="btn btn-primary nav-btn">Empieza hoy →</a>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="m-close" id="mClose">✕</button>
+  <a href="#sobre-mi" class="ml">Sobre mí</a>
+  <a href="#metodo" class="ml">Mi método</a>
+  <a href="#programas" class="ml">Programas</a>
+  <a href="#resultados" class="ml">Resultados</a>
+  <a href="#contacto" class="ml">Contacto</a>
+  <a href="#contacto" class="btn btn-primary btn-lg">Empieza hoy →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="fi">
+        <div class="hero-chip">Coaching Online para Mujeres +35</div>
+        <h1><em>Vive más joven</em><br>por más tiempo.</h1>
+        <p class="hero-desc">Pierde grasa, reduce la inflamación y recupera tu energía con un método sostenible — sin dietas extremas, sin horas interminables en el gym.</p>
+        <div class="hero-ctas">
+          <a href="#contacto" class="btn btn-primary btn-lg">Quiero mi transformación <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#metodo" class="btn btn-outline">Conoce el método</a>
+        </div>
+        <div class="hero-proof">
+          <div class="faces">
+            <div class="face">👩</div>
+            <div class="face">👩</div>
+            <div class="face">👩</div>
+            <div class="face">👩</div>
+          </div>
+          <div class="proof-text">
+            <strong>+800 mujeres transformadas</strong>
+            <span>Se sienten jóvenes y llenas de energía</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fi">
+        <div class="hero-img">
+          <div class="hero-img-inner">
+            <img src="logo-mvef.png" alt="Mi Vida en Forma">
+            <p>[ Foto de Yerlina ]</p>
+          </div>
+        </div>
+        <div class="float-card bottom">
+          <div class="float-icon">🏆</div>
+          <div><strong>Método 360°</strong><span>Cuerpo · Mente · Hábitos</span></div>
+        </div>
+        <div class="float-card top">
+          <div class="float-icon">✨</div>
+          <div><strong>+20 años</strong><span>de experiencia</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat fi"><div class="stat-n" data-target="800" data-prefix="+">+800</div><div class="stat-l">Mujeres transformadas</div></div>
+      <div class="stat fi"><div class="stat-n" data-target="20" data-prefix="+">+20</div><div class="stat-l">Años de experiencia</div></div>
+      <div class="stat fi"><div class="stat-n" data-target="100" data-suffix="%">100%</div><div class="stat-l">Personalizado para ti</div></div>
+      <div class="stat fi"><div class="stat-n" data-target="360" data-suffix="°">360°</div><div class="stat-l">Cuerpo, mente y hábitos</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- METHOD -->
+<section class="method section" id="metodo">
+  <div class="container">
+    <div class="method-grid">
+      <div class="method-visual fi">
+        <div class="method-circle"><img src="logo-mvef.png" alt="Método Mi Vida en Forma"></div>
+      </div>
+      <div class="fi">
+        <span class="label">Mi método</span>
+        <h2>Mucho más que entrenar<br><em>y comer bien.</em></h2>
+        <p style="margin-top:.75rem;max-width:480px">Mi método combina nutrición antiinflamatoria, entrenamiento inteligente y trabajo mental para que consigas resultados que se mantienen en el tiempo.</p>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="p-icon">🥗</div>
+            <div class="p-text"><h4>Nutrición real</h4><p>Come rico, variado y sin restricciones innecesarias. Aprende a nutrir tu cuerpo sin pasarla mal.</p></div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">💪</div>
+            <div class="p-text"><h4>Entrenamiento inteligente</h4><p>Rutinas efectivas adaptadas a tu cuerpo y tu vida. Sin lesiones, sin sobrecarga.</p></div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon">🧠</div>
+            <div class="p-text"><h4>Mentalidad y hábitos</h4><p>Cambia tu mente, organiza tu vida y mantén tus resultados para siempre.</p></div>
+          </div>
+        </div>
+        <a href="#contacto" class="btn btn-primary" style="margin-top:2rem">Conoce mi método completo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs section" id="programas">
+  <div class="container">
+    <div class="text-center fi">
+      <span class="label">Programas</span>
+      <h2>Elige tu camino.<br><em>Yo te acompaño.</em></h2>
+      <p style="margin-top:.75rem;max-width:550px">Cada mujer es única. Tengo programas diseñados para diferentes objetivos y momentos de vida.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card fi">
+        <div class="prog-img" style="background:linear-gradient(135deg,#EFF3EB,#C4D4BB)">🌿<span class="prog-tag">Más popular</span></div>
+        <div class="prog-body">
+          <h3>Desinfláma</h3>
+          <p>Reduce la inflamación, mejora tu digestión y siéntete llena de energía desde la primera semana.</p>
+          <ul class="prog-features">
+            <li>Plan nutricional antiinflamatorio</li>
+            <li>Rutinas de movimiento suave</li>
+            <li>Guía de hábitos diarios</li>
+            <li>Seguimiento semanal</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary">Ver programa →</a>
+        </div>
+      </div>
+      <div class="prog-card fi">
+        <div class="prog-img" style="background:linear-gradient(135deg,#E8EDE0,#8FA882)">🔥<span class="prog-tag">Define & Tonifica</span></div>
+        <div class="prog-body">
+          <h3>Define &amp; Tonifica</h3>
+          <p>Define tu cuerpo, mejora tu composición corporal y gana fuerza sin perder tu feminidad.</p>
+          <ul class="prog-features">
+            <li>Entrenamiento de fuerza progresivo</li>
+            <li>Nutrición para composición corporal</li>
+            <li>Revisiones quincenales</li>
+            <li>Soporte por WhatsApp</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary">Ver programa →</a>
+        </div>
+      </div>
+      <div class="prog-card fi">
+        <div class="prog-img" style="background:linear-gradient(135deg,#C4B49A,#8FA882)">✨<span class="prog-tag">Transforma 360°</span></div>
+        <div class="prog-body">
+          <h3>Transforma 360°</h3>
+          <p>La transformación definitiva: cuerpo, mente y hábitos. Para quien quiere un cambio real y duradero.</p>
+          <ul class="prog-features">
+            <li>Todo lo de Define &amp; Tonifica</li>
+            <li>Coaching de mentalidad y hábitos</li>
+            <li>Seguimiento diario</li>
+            <li>Acceso prioritario a Yerlina</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary">Ver programa →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how section">
+  <div class="container">
+    <div class="text-center fi">
+      <span class="label">Cómo funciona</span>
+      <h2>Empezar es<br><em>más fácil de lo que crees.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step fi">
+        <div class="step-n">1</div>
+        <h3>Rellena el formulario</h3>
+        <p>Cuéntame sobre ti, tus objetivos y tu estilo de vida en menos de 3 minutos.</p>
+      </div>
+      <div class="step fi">
+        <div class="step-n">2</div>
+        <h3>Hablamos por WhatsApp</h3>
+        <p>Me pongo en contacto contigo personalmente para organizar una llamada.</p>
+      </div>
+      <div class="step fi">
+        <div class="step-n">3</div>
+        <h3>Comienza tu programa</h3>
+        <p>Conversamos sobre tus objetivos y ponemos en marcha tu plan personalizado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features section">
+  <div class="container">
+    <div class="text-center fi">
+      <span class="label">Tu mentoría incluye</span>
+      <h2>Todo lo que necesitas<br><em>para transformarte.</em></h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card fi"><div class="feat-icon">🏋️</div><div class="feat-text"><h4>Entrenamientos personalizados</h4><p>Rutinas en casa o gym adaptadas a tu nivel y disponibilidad.</p></div></div>
+      <div class="feat-card fi"><div class="feat-icon">🥗</div><div class="feat-text"><h4>Plan nutricional a medida</h4><p>Sin restricciones absurdas. Comida que disfrutas y que te nutre de verdad.</p></div></div>
+      <div class="feat-card fi"><div class="feat-icon">📊</div><div class="feat-text"><h4>Revisiones semanales</h4><p>Seguimiento semanal para ajustar, celebrar avances y mantener el rumbo.</p></div></div>
+      <div class="feat-card fi"><div class="feat-icon">💬</div><div class="feat-text"><h4>Comunicación continua</h4><p>Estoy contigo en todo momento. Te acompaño, guío y motivo cuando más lo necesitas.</p></div></div>
+      <div class="feat-card fi"><div class="feat-icon">📱</div><div class="feat-text"><h4>App propia con todo incluido</h4><p>Accede a tu plan, diario de comidas, rutinas y más desde tu móvil.</p></div></div>
+      <div class="feat-card fi"><div class="feat-icon">🧠</div><div class="feat-text"><h4>Trabajo de mentalidad</h4><p>El secreto del cambio real está en la cabeza. Trabajamos los hábitos que lo hacen sostenible.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section" id="resultados">
+  <div class="container">
+    <div class="text-center fi">
+      <span class="label">Resultados reales</span>
+      <h2>Ellas ya<br><em>lo lograron.</em></h2>
+      <p style="margin-top:.75rem;max-width:520px">Mujeres reales, con vidas reales, que decidieron invertir en sí mismas.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fi">
+        <div class="testi-imgs">
+          <div class="testi-ph" style="background:var(--green-pale)">📸</div>
+          <div class="testi-ph" style="background:var(--green-light)">✨</div>
+        </div>
+        <div class="testi-body">
+          <div class="stars">★★★★★</div>
+          <p>"De sentirme mal conmigo misma, a quererme de nuevo y cuidar de mi salud."</p>
+          <strong>Giovanna — Tenerife</strong>
+        </div>
+      </div>
+      <div class="testi-card fi">
+        <div class="testi-imgs">
+          <div class="testi-ph" style="background:var(--green-pale)">📸</div>
+          <div class="testi-ph" style="background:var(--green-light)">✨</div>
+        </div>
+        <div class="testi-body">
+          <div class="stars">★★★★★</div>
+          <p>"Yerlina me llevó de la mano hacia mi mejor versión. ¡Súper agradecida!"</p>
+          <strong>Rebeca — Vigo</strong>
+        </div>
+      </div>
+      <div class="testi-card fi">
+        <div class="testi-imgs">
+          <div class="testi-ph" style="background:var(--green-pale)">📸</div>
+          <div class="testi-ph" style="background:var(--green-light)">✨</div>
+        </div>
+        <div class="testi-body">
+          <div class="stars">★★★★★</div>
+          <p>"Yerlina transformó mi vida a mejor por completo. Aprendí muchísimo de ella."</p>
+          <strong>Ena — Venezolana en Madrid</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section" id="sobre-mi">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap fi">
+        <div class="about-img">
+          <div class="about-img-inner">
+            <img src="logo-mvef.png" alt="Yerlina">
+            <p>[ Foto de Yerlina ]</p>
+          </div>
+        </div>
+        <div class="creds">
+          <div class="cred"><div class="cred-dot"></div>Nutrición antiinflamatoria</div>
+          <div class="cred"><div class="cred-dot"></div>Entrenamiento femenino</div>
+          <div class="cred"><div class="cred-dot"></div>Coaching de hábitos</div>
+          <div class="cred"><div class="cred-dot"></div>+20 años de experiencia</div>
+        </div>
+      </div>
+      <div class="about-content fi">
+        <span class="label">Sobre mí</span>
+        <h2>Soy Yerlina,<br><em>una mujer real como tú.</em></h2>
+        <p class="lead">Con más de 20 años de experiencia en entrenamiento físico y nutrición saludable.</p>
+        <p>Estoy aquí para ayudarte a sentirte fuerte, vital y llena de energía. Quiero acompañarte a mejorar tu calidad de vida, reducir la inflamación y recuperar el poder del entrenamiento con propósito.</p>
+        <p style="margin-top:1rem">No estás sola. Yo estaré contigo cada día que lo necesites — guiándote, motivándote y celebrando cada paso contigo.</p>
+        <div class="highlights">
+          <div class="hl-item"><span class="num">+800</span><span class="lbl">Clientas</span></div>
+          <div class="hl-item"><span class="num">+20</span><span class="lbl">Años experiencia</span></div>
+          <div class="hl-item"><span class="num">100%</span><span class="lbl">Resultados reales</span></div>
+        </div>
+        <a href="#contacto" class="btn btn-primary">Trabaja conmigo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section">
+  <div class="container">
+    <div class="text-center fi">
+      <span class="label">Preguntas frecuentes</span>
+      <h2>¿Tienes dudas?<br><em>Tengo respuestas.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item fi">
+        <div class="faq-q">¿Necesito ir al gimnasio para trabajar contigo?<span class="faq-ic">+</span></div>
+        <div class="faq-a"><p>No es necesario. Puedo diseñar un programa que se adapte perfectamente a tu situación, ya sea en casa, en el gimnasio o al aire libre. Lo importante es que encaje con tu vida.</p></div>
+      </div>
+      <div class="faq-item fi">
+        <div class="faq-q">¿Tienes en cuenta mis restricciones alimentarias?<span class="faq-ic">+</span></div>
+        <div class="faq-a"><p>Absolutamente. Siempre personalizo el plan nutricional teniendo en cuenta tus preferencias, intolerancias, alergias y objetivos. Mi enfoque es que comas bien y lo disfrutes.</p></div>
+      </div>
+      <div class="faq-item fi">
+        <div class="faq-q">¿Cómo se realizan las revisiones de progreso?<span class="faq-ic">+</span></div>
+        <div class="faq-a"><p>Las revisiones son semanales a través de la app. Me envías tus métricas, fotos y cómo te has sentido. Yo analizo todo y ajusto el plan si es necesario.</p></div>
+      </div>
+      <div class="faq-item fi">
+        <div class="faq-q">¿Existe algún período mínimo para trabajar contigo?<span class="faq-ic">+</span></div>
+        <div class="faq-a"><p>Los programas tienen una duración mínima recomendada para garantizar resultados reales y duraderos. En nuestra llamada inicial te explico las opciones disponibles.</p></div>
+      </div>
+      <div class="faq-item fi">
+        <div class="faq-q">¿Tengo que pagar por adelantado o puedo pagar mes a mes?<span class="faq-ic">+</span></div>
+        <div class="faq-a"><p>Tengo opciones flexibles de pago. En nuestra llamada te explico los detalles de cada programa y encontramos la opción que mejor se adapta a ti.</p></div>
+      </div>
+      <div class="faq-item fi">
+        <div class="faq-q">¿Cuánto cuesta el programa personalizado?<span class="faq-ic">+</span></div>
+        <div class="faq-a"><p>El precio varía según el programa y la duración. Rellena el formulario y hablamos — siempre hay una opción que encaja con tu situación e inversión.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-sec" id="contacto">
+  <div class="container fi">
+    <span class="label" style="color:rgba(255,255,255,.55)">Empieza hoy</span>
+    <h2>¿Lista para sentirte<br><em style="color:rgba(255,255,255,.8)">joven y llena de energía?</em></h2>
+    <p>Da el primer paso. Rellena el formulario y me pongo en contacto contigo en menos de 24 horas.</p>
+    <a href="https://wa.me/34000000000" class="btn btn-white btn-lg" style="box-shadow:0 8px 24px rgba(0,0,0,.15)">
+      Quiero empezar mi transformación →
+    </a>
+    <p class="cta-note">Sin compromiso. Sin presión. Solo una conversación.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="nav-logo">
+          <img src="logo-mvef.png" alt="Mi Vida en Forma">
+          <span style="color:var(--white)">Mi Vida en Forma <span class="sub" style="color:rgba(255,255,255,.3)">Con Yerlina</span></span>
+        </a>
+        <p>Coaching online especializado en mujeres +35. Vive más joven por más tiempo.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#metodo">Mi método</a></li>
+          <li><a href="#programas">Programas</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Programas</h5>
+        <ul>
+          <li><a href="#programas">Desinfláma</a></li>
+          <li><a href="#programas">Define &amp; Tonifica</a></li>
+          <li><a href="#programas">Transforma 360°</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="#contacto">Empieza hoy</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:hola@mvf.coach">hola@mvf.coach</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Mi Vida en Forma · Todos los derechos reservados</p>
+      <div class="social-links">
+        <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+        </a>
+        <a href="https://wa.me/34000000000" class="social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const nb = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nb.classList.toggle('scrolled', scrollY > 50));
+
+  // Mobile menu
+  const hb = document.getElementById('hamburger');
+  const mm = document.getElementById('mobileMenu');
+  const mc = document.getElementById('mClose');
+  const openMenu = () => { mm.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const closeMenu = () => { mm.classList.remove('open'); document.body.style.overflow = ''; };
+  hb.addEventListener('click', openMenu);
+  mc.addEventListener('click', closeMenu);
+  mm.querySelectorAll('.ml').forEach(l => l.addEventListener('click', closeMenu));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Fade in on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('v'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+  // Counter animation
+  function counter(el, target, prefix='', suffix='') {
+    const dur = 1800, start = performance.now();
+    const run = t => {
+      const p = Math.min((t-start)/dur, 1);
+      const eased = 1 - Math.pow(1-p, 3);
+      el.textContent = prefix + Math.round(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(run);
+    };
+    requestAnimationFrame(run);
+  }
+  const statsObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.stat-n').forEach(el => {
+          counter(el, +el.dataset.target, el.dataset.prefix||'', el.dataset.suffix||'');
+        });
+        statsObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  const sg = document.querySelector('.stats-grid');
+  if (sg) statsObs.observe(sg);
+</script>
+</body>
+</html>
