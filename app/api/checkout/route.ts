@@ -12,13 +12,13 @@ import Stripe from 'stripe'
 //   3. Pégalo en el array `products` de components/Shop.tsx
 // ─────────────────────────────────────────────────────────────────────────────
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-02-24.acacia',
-})
-
 export async function POST(req: NextRequest) {
   try {
     const { priceId } = await req.json()
+
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+      apiVersion: '2025-02-24.acacia',
+    })
 
     if (!priceId) {
       return NextResponse.json({ error: 'Price ID requerido.' }, { status: 400 })
