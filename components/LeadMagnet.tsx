@@ -52,31 +52,63 @@ export default function LeadMagnet() {
           {/* Left — copy */}
           <AnimatedSection>
             <span className="section-label" style={{ color: 'rgba(255,255,255,.4)' }}>
-              Guía gratuita
+              Regalo gratuito · Mujeres +40
             </span>
-            <h2 className="font-serif text-white mb-4">
-              Descarga gratis la guía
+            <h2 className="font-serif text-white mb-2">
+              Descarga gratis mi guía
               <br />
-              <em className="not-italic text-white/65">para mujeres +40</em>
+              <em className="not-italic text-white/65">y empieza desde hoy</em>
             </h2>
-            <p className="text-white/60 leading-relaxed mb-8 max-w-md">
-              Aprende las claves que nadie te ha contado sobre entrenamiento y nutrición
-              en esta etapa de tu vida. Sin tecnicismos, sin restricciones, con resultados.
+            <p className="text-white/60 leading-relaxed mb-7 max-w-md">
+              Aprende a mejorar tu cuerpo, tu energía y tus hábitos con estrategias
+              reales — pensadas específicamente para mujeres de +40. Sin tecnicismos,
+              sin restricciones.
             </p>
 
-            <ul className="space-y-3.5 mb-8">
-              {benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3">
-                  <span className="w-5 h-5 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <IconCheck className="w-3 h-3 text-white" />
-                  </span>
-                  <span className="text-sm text-white/75 leading-snug">{b}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Guide mockup */}
+            <div className="mb-8 flex items-center gap-5">
+              {/* Book cover */}
+              <div className="relative flex-shrink-0">
+                <div className="w-[100px] h-[130px] rounded-xl overflow-hidden shadow-2xl"
+                  style={{ background: 'linear-gradient(135deg, #2d5a2d 0%, #4a8c4a 50%, #3d7a3d 100%)' }}>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-3 text-center">
+                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mb-2">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="w-4 h-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.379 3.967 1 7.5 1 9.57 1 11.3 1.988 12 3.24 12.7 1.988 14.43 1 16.5 1 20.033 1 23 3.379 23 7.191c0 4.105-5.37 8.863-11 14.402z" />
+                      </svg>
+                    </div>
+                    <p className="text-white font-serif text-[0.6rem] font-bold leading-tight uppercase tracking-wide">Guía</p>
+                    <p className="text-white/90 font-serif text-[0.5rem] leading-tight mt-0.5">Mi Vida en Forma</p>
+                    <div className="mt-2 text-[0.45rem] text-white/60 leading-tight">Para mujeres +40</div>
+                  </div>
+                  {/* Spine shadow */}
+                  <div className="absolute left-0 top-0 bottom-0 w-3 bg-black/20" />
+                </div>
+                {/* Shadow */}
+                <div className="absolute -bottom-2 left-1 right-1 h-3 bg-black/30 blur-md rounded-full" />
+                {/* Free badge */}
+                <div className="absolute -top-2 -right-2 bg-amber-400 text-amber-900 text-[0.5rem] font-black uppercase rounded-full px-2 py-1 shadow-lg leading-none">
+                  GRATIS
+                </div>
+              </div>
 
-            <div className="inline-flex items-center gap-2 bg-white/10 rounded-2xl px-4 py-3 border border-white/10">
-              <span className="text-2xl font-serif text-white font-bold">🎁</span>
+              {/* Benefits list */}
+              <ul className="space-y-2.5">
+                {benefits.map((b) => (
+                  <li key={b} className="flex items-start gap-2.5">
+                    <span className="w-4 h-4 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <IconCheck className="w-2.5 h-2.5 text-white" />
+                    </span>
+                    <span className="text-[0.78rem] text-white/75 leading-snug">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="inline-flex items-center gap-3 bg-white/10 rounded-2xl px-4 py-3 border border-white/10">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-5 h-5 text-amber-400 flex-shrink-0">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2l2.09 6.26L20 9.27l-5 4.87L16.18 21 12 17.77 7.82 21 9 14.14 4 9.27l5.91-.91z" />
+              </svg>
               <p className="text-sm text-white/80 leading-tight">
                 Además recibirás un <strong className="text-white">10% de descuento</strong> exclusivo
                 para usar en cualquier programa.

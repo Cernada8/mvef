@@ -1,28 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
-
-// ─── Stripe checkout session ──────────────────────────────────────────────────
-// Variables de entorno necesarias (añade en Vercel → Settings → Environment Variables):
-//   STRIPE_SECRET_KEY  → tu clave secreta de Stripe (Developers → API Keys → Secret key)
-//   NEXT_PUBLIC_URL    → la URL pública de tu web, ej. "https://www.mvf.coach"
-//
-// Pasos:
-//   1. Crea los productos en Stripe Dashboard → Products → Add product
-//   2. Copia el Price ID de cada producto (empieza por "price_")
-//   3. Pégalo en el array `products` de components/Shop.tsx
-// ─────────────────────────────────────────────────────────────────────────────
+import { prisma } from '@/lib/prisma'
 
 export async function POST(req: NextRequest) {
   try {
     const { priceId } = await req.json()
 
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-      apiVersion: '2025-02-24.acacia',
-    })
-
     if (!priceId) {
       return NextResponse.json({ error: 'Price ID requerido.' }, { status: 400 })
     }
+
+    // Verificar que el producto existe y está activo en nuestra DB
+    const product = await prisma.product.findFirst({
+      where: { stripePriceId: priceId, active: true },
+    })
+
+    if (!product) {
+      return NextResponse.json({ error: 'Producto no disponible.' }, { status: 404 })
+    }
+
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+      apiVersion: '2025-02-24.acacia',
+    })
 
     const baseUrl = process.env.NEXT_PUBLIC_URL || 'https://www.mvf.coach'
 
@@ -33,12 +32,25 @@ export async function POST(req: NextRequest) {
       cancel_url:  `${baseUrl}/#tienda`,
       locale: 'es',
       payment_method_types: ['card'],
-      allow_promotion_codes: true, // permite que el cliente use BIENVENIDA10
+      allow_promotion_codes: true,
+      metadata: { productId: product.id }, // lo usamos en el webhook
+    })
+
+    // Crear el pedido en estado PENDING
+    await prisma.order.create({
+      data: {
+        productId:       product.id,
+        customerEmail:   '', // se rellena en el webhook cuando Stripe confirma
+        stripeSessionId: session.id,
+        amountPaid:      product.price,
+        currency:        product.currency,
+        status:          'PENDING',
+      },
     })
 
     return NextResponse.json({ url: session.url })
   } catch (err) {
-    console.error('Stripe error:', err)
+    console.error('Checkout error:', err)
     return NextResponse.json({ error: 'Error al crear la sesión de pago.' }, { status: 500 })
   }
 }

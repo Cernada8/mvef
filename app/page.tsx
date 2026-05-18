@@ -1,5 +1,6 @@
 import Navbar        from '@/components/Navbar'
 import Hero          from '@/components/Hero'
+import AuthorityBar  from '@/components/AuthorityBar'
 import EmotionalHook from '@/components/EmotionalHook'
 import Stats         from '@/components/Stats'
 import Method        from '@/components/Method'
@@ -20,6 +21,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <AuthorityBar />    {/* 47 años · +20 exp · +288K seguidoras */}
         <EmotionalHook />   {/* Mensaje emocional de conexión */}
         <Stats />
         <Method />

@@ -1,0 +1,131 @@
+// ─── Mi Vida en Forma — Database Schema ───────────────────────────────────────
+// ORM: Prisma · DB: PostgreSQL (Supabase)
+//
+// Para añadir nuevas tablas en el futuro:
+//   1. Edita este archivo
+//   2. Ejecuta: npx prisma migrate dev --name descripcion_del_cambio
+//   3. Vercel recoge los cambios en el próximo deploy
+// ─────────────────────────────────────────────────────────────────────────────
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")       // pooled (para serverless / Vercel)
+  directUrl = env("DIRECT_URL")         // directo (para migraciones locales)
+}
+
+// ─── SUSCRIPTORAS ─────────────────────────────────────────────────────────────
+// Mujeres que dejaron su email a cambio de la guía gratuita.
+
+model Subscriber {
+  id              String   @id @default(cuid())
+  name            String
+  email           String   @unique
+  source          String   @default("lead-magnet") // de dónde vino
+  mailchimpId     String?                          // ID en Mailchimp (por si acaso)
+  discountSent    Boolean  @default(true)          // si ya recibió BIENVENIDA10
+  createdAt       DateTime @default(now())
+
+  @@map("subscribers")
+}
+
+// ─── PRODUCTOS ────────────────────────────────────────────────────────────────
+// Catálogo de guías y programas digitales.
+// Yerlina podrá añadir y editar productos desde su dashboard en el futuro.
+
+model Product {
+  id              String   @id @default(cuid())
+  name            String
+  description     String
+  price           Int                            // en céntimos (ej. 1900 = 19€)
+  currency        String   @default("eur")
+  stripePriceId   String   @unique              // "price_xxx" de Stripe
+  stripeProductId String?                       // "prod_xxx" de Stripe
+  fileUrl         String?                       // URL del PDF en Supabase Storage
+  active          Boolean  @default(true)       // visible en tienda o no
+  featured        Boolean  @default(false)      // para destacar en el futuro
+  sortOrder       Int      @default(0)          // orden de aparición
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  orders          Order[]
+
+  @@map("products")
+}
+
+// ─── PEDIDOS ──────────────────────────────────────────────────────────────────
+// Registro de cada compra. Se crea cuando Stripe confirma el pago.
+
+model Order {
+  id                    String      @id @default(cuid())
+  customerEmail         String
+  customerName          String?
+  productId             String
+  product               Product     @relation(fields: [productId], references: [id])
+  stripeSessionId       String      @unique   // ID de la sesión de Stripe
+  stripePaymentIntentId String?               // para refunds y consultas
+  amountPaid            Int                   // en céntimos
+  currency              String      @default("eur")
+  status                OrderStatus @default(PENDING)
+  discountCode          String?               // si usó BIENVENIDA10 u otro
+  downloadToken         String      @unique @default(cuid()) // token único para descargar
+  downloadExpiresAt     DateTime?             // cuándo caduca el enlace de descarga
+  downloadCount         Int         @default(0)
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+
+  @@map("orders")
+}
+
+enum OrderStatus {
+  PENDING    // sesión de Stripe abierta, pago no confirmado aún
+  COMPLETED  // pago confirmado → descarga habilitada
+  REFUNDED   // devuelto
+  FAILED     // fallido
+}
+
+// ─── USUARIOS ADMIN ───────────────────────────────────────────────────────────
+// De momento solo Yerlina. Preparado para dashboard futuro.
+// Autenticación gestionada por Supabase Auth (no almacenamos passwords aquí).
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  role      UserRole @default(ADMIN)
+  avatarUrl String?
+  createdAt DateTime @default(now())
+
+  @@map("users")
+}
+
+enum UserRole {
+  ADMIN     // acceso total al dashboard
+  CUSTOMER  // reservado para futuro área de clientas
+}
+
+// ─── DESCUENTOS ───────────────────────────────────────────────────────────────
+// Control de cupones propios (complementa los de Stripe).
+// Útil para generar códigos personalizados o rastrear uso.
+
+model Discount {
+  id          String    @id @default(cuid())
+  code        String    @unique
+  type        DiscountType
+  value       Int                     // porcentaje o céntimos según type
+  maxUses     Int?                    // null = usos ilimitados
+  usedCount   Int       @default(0)
+  active      Boolean   @default(true)
+  expiresAt   DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@map("discounts")
+}
+
+enum DiscountType {
+  PERCENTAGE  // ej. 10 = 10%
+  FIXED       // ej. 500 = 5€
+}

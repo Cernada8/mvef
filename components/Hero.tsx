@@ -32,19 +32,28 @@ export default function Hero() {
               sostenible — sin dietas extremas, sin horas interminables en el gym.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
+            {/* Guía gratis — CTA principal */}
+            <div className="bg-green-xpale border border-green-mid/20 rounded-2xl px-5 py-4 mb-6 max-w-md">
+              <p className="text-xs font-semibold text-green-dark uppercase tracking-widest mb-1">Regalo gratuito para mujeres +40</p>
+              <p className="text-ink-mid text-sm leading-snug">
+                Descarga gratis mi guía y empieza a mejorar tu cuerpo,
+                energía y hábitos <strong className="text-ink-dark">desde hoy</strong>.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-10">
               <Link
-                href="#contacto"
+                href="#guia-gratis"
                 className="inline-flex items-center gap-2.5 bg-green-dark hover:bg-green-mid text-white font-semibold px-7 py-3.5 rounded-full text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg group"
               >
-                Quiero mi transformación
+                Quiero mi guía gratis
                 <IconArrow className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <Link
-                href="#metodo"
+                href="#contacto"
                 className="inline-flex items-center gap-2 text-green-dark hover:text-green-mid font-medium text-sm transition-colors duration-200 group"
               >
-                Conoce el método
+                Quiero mi transformación
                 <IconArrow className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
@@ -62,8 +71,8 @@ export default function Hero() {
                 ))}
               </div>
               <div>
-                <p className="text-sm font-semibold text-ink-dark">+800 mujeres transformadas</p>
-                <p className="text-xs text-ink-light mt-0.5">Se sienten jóvenes y llenas de energía</p>
+                <p className="text-sm font-semibold text-ink-dark">+288.000 seguidoras en Instagram</p>
+                <p className="text-xs text-ink-light mt-0.5">Mujeres que ya han cambiado su vida</p>
               </div>
             </div>
           </AnimatedSection>
