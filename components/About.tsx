@@ -28,7 +28,7 @@ export default function About() {
               <div className="w-full aspect-[3/4] rounded-[2.5rem] overflow-hidden relative group">
                 <Image
                   src="/about-yerlina.jpg"
-                  alt="Yerlina — Mi Vida en Forma"
+                  alt="Yerlina, coach de nutrición y entrenamiento para mujeres +35 — Mi Vida en Forma"
                   fill
                   className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 480px"

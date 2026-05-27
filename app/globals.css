@@ -21,3 +21,34 @@
     @apply text-xs font-semibold tracking-widest uppercase text-green-mid block mb-3;
   }
 }
+
+/* ── Hero: shimmer en botón CTA ── */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(220%) skewX(-15deg); }
+}
+
+.hero-btn-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%) skewX(-15deg);
+  animation: shimmer 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Hero: glow pulsante en borde guía gratis ── */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+.hero-glow-border {
+  animation: glowPulse 2.4s ease-in-out infinite;
+}

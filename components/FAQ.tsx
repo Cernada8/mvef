@@ -5,28 +5,40 @@ import AnimatedSection from './AnimatedSection'
 
 const faqs = [
   {
-    q: '¿Necesito ir al gimnasio para trabajar contigo?',
-    a: 'No es necesario. Puedo diseñar un programa que se adapte perfectamente a tu situación, ya sea en casa, en el gimnasio o al aire libre. Lo importante es que encaje con tu vida.',
+    q: '¿Este programa es solo para perder peso?',
+    a: 'No. El objetivo es ayudarte a sentirte fuerte, con energía, desinflamada y más segura de ti misma. Muchas mujeres pierden grasa y medidas, pero también mejoran su fuerza, hábitos, autoestima y bienestar general.',
   },
   {
-    q: '¿Tienes en cuenta mis restricciones alimentarias?',
-    a: 'Absolutamente. Siempre personalizo el plan nutricional teniendo en cuenta tus preferencias, intolerancias, alergias y objetivos. Mi enfoque es que comas bien y lo disfrutes.',
+    q: '¿Funciona aunque tenga más de 40 años?',
+    a: 'Sí, de hecho gran parte de mis alumnas tienen más de 40. El entrenamiento y la alimentación están enfocados en los cambios hormonales, metabolismo más lento, inflamación y pérdida de masa muscular que aparecen con los años.',
   },
   {
-    q: '¿Cómo se realizan las revisiones de progreso?',
-    a: 'Las revisiones son semanales a través de la app. Me envías tus métricas, fotos y cómo te has sentido durante la semana. Yo analizo todo y ajusto el plan si es necesario.',
+    q: '¿Necesito experiencia entrenando?',
+    a: 'Para nada. Adaptamos el plan a tu nivel, desde cero hasta avanzado. Lo importante es empezar de manera inteligente y sostenible.',
   },
   {
-    q: '¿Existe algún período mínimo para trabajar contigo?',
-    a: 'Los programas tienen una duración mínima recomendada para garantizar resultados reales y duraderos. En nuestra llamada inicial te explico las opciones disponibles.',
+    q: '¿También ayudas con inflamación abdominal y menopausia?',
+    a: 'Sí. Trabajo muchísimo con mujeres que sienten hinchazón, cambios hormonales, fatiga, aumento de grasa abdominal o metabolismo lento. Es uno de mis focos principales.',
   },
   {
-    q: '¿Tengo que pagar por adelantado o puedo pagar mes a mes?',
-    a: 'Tengo opciones flexibles de pago. En nuestra llamada te explico los detalles de cada programa y encontramos la opción que mejor se adapta a ti.',
+    q: '¿Tengo que pasar hambre o eliminar lo que me gusta?',
+    a: 'No. Aprendemos a comer para nutrir el cuerpo, tener energía y mejorar la composición corporal sin vivir obsesionada con las calorías ni con restricciones. La idea es crear hábitos sostenibles, no vivir restringida.',
   },
   {
-    q: '¿Cuánto cuesta el programa personalizado?',
-    a: 'El precio varía según el programa y la duración. Rellena el formulario y hablamos — siempre hay una opción que encaja con tu situación e inversión.',
+    q: '¿Cuánto tiempo necesito entrenar?',
+    a: 'Mis planes están pensados para mujeres reales y ocupadas. Con 30-50 minutos bien hechos es más que suficiente. Puedes entrenar en gimnasio o desde casa según tu estilo de vida.',
+  },
+  {
+    q: '¿En cuánto tiempo voy a notar cambios?',
+    a: 'Cada cuerpo es distinto, pero muchas mujeres empiezan a sentirse con más energía y menos inflamación en pocas semanas. Los cambios físicos llegan con constancia y estrategia.',
+  },
+  {
+    q: '¿Por qué tu método es diferente?',
+    a: 'Porque no se basa en matarte a cardio ni comer poquísimo. Después de los 40 el cuerpo necesita estrategia, fuerza, buena alimentación y hábitos que puedas mantener de verdad. Más de 20 años de experiencia y +800 alumnas lo avalan.',
+  },
+  {
+    q: '¿Cómo empiezo?',
+    a: 'Solo tienes que rellenar el formulario y te contactaré personalmente para ver cuál es la mejor opción para ti 🤍',
   },
 ]
 
@@ -55,7 +67,8 @@ export default function FAQ() {
                 >
                   {f.q}
                   <span
-                    className={`w-7 h-7 min-w-7 rounded-full border flex items-center justify-center text-base leading-none transition-all duration-300 flex-shrink-0 ${
+                    className={`w-7 h-7 min-w-7 rounded-
+full border flex items-center justify-center text-base leading-none transition-all duration-300 flex-shrink-0 ${
                       open === i
                         ? 'bg-green-dark border-green-dark text-white rotate-45'
                         : 'border-ink-dark/20 text-ink-mid'

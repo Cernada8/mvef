@@ -31,8 +31,8 @@ export default function Method() {
           <AnimatedSection className="flex justify-center order-2 lg:order-1">
             <div className="w-full max-w-[460px] aspect-[4/5] rounded-[2.5rem] overflow-hidden relative group">
               <Image
-                src="/mi-metodo (1).jpg"
-                alt="Yerlina entrenando — Mi método"
+                src="/mi-metodo.jpg"
+                alt="Yerlina mostrando su método 360° de entrenamiento y nutrición para mujeres +35"
                 fill
                 className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                 sizes="(max-width: 1024px) 100vw, 460px"
@@ -80,9 +80,8 @@ export default function Method() {
               <IconArrow className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </AnimatedSection>
-
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
   )
 }

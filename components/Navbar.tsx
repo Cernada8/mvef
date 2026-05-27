@@ -37,7 +37,7 @@ export default function Navbar() {
         <div className="max-w-6xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-6">
           {/* Logo */}
           <Link href="#inicio" className="flex items-center gap-3 group">
-            <Image src="/logo-mvef.png" alt="Mi Vida en Forma" width={56} height={56} priority />
+            <Image src="/logo-mvef.png" alt="Logo Mi Vida en Forma — Coaching online con Yerlina" width={56} height={56} priority />
             <span className="font-serif font-bold text-ink-dark leading-tight hidden sm:block">
               Mi Vida en Forma
               <span className="block font-sans font-normal text-[0.62rem] tracking-widest uppercase text-ink-light">

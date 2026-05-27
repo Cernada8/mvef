@@ -51,7 +51,7 @@ export default function Testimonials() {
                 <div className="w-full aspect-square relative overflow-hidden">
                   <Image
                     src={t.img}
-                    alt={`Transformación de ${t.name}`}
+                    alt={`Antes y después de ${t.name} — transformación real con Mi Vida en Forma`}
                     fill
                     className="object-cover object-center group-hover:scale-[1.04] transition-transform duration-600 ease-out"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px"

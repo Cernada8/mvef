@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="#inicio" className="flex items-center gap-3 mb-4">
-              <Image src="/logo-mvef.png" alt="Mi Vida en Forma" width={38} height={38} />
+              <Image src="/logo-mvef.png" alt="Logo Mi Vida en Forma — Coaching online con Yerlina" width={38} height={38} />
               <span className="font-serif font-bold text-white leading-tight text-[0.95rem]">
                 Mi Vida en Forma
                 <span className="block font-sans font-normal text-[0.58rem] tracking-widest uppercase text-white/30">

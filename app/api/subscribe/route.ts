@@ -30,6 +30,8 @@ export async function POST(req: NextRequest) {
     const GROUP_ID = process.env.MAILERLITE_GROUP_ID
 
     if (API_KEY) {
+      console.log('[MailerLite] Sending subscriber to group:', GROUP_ID)
+
       // Crear/actualizar suscriptora
       const mlRes = await fetch('https://connect.mailerlite.com/api/subscribers', {
         method: 'POST',
@@ -47,11 +49,15 @@ export async function POST(req: NextRequest) {
       })
 
       if (!mlRes.ok) {
-        const err = await mlRes.json()
-        console.warn('MailerLite warning:', err)
+        const errBody = await mlRes.json().catch(() => ({}))
+        console.error('[MailerLite] Error:', mlRes.status, JSON.stringify(errBody))
+        // No bloqueamos la respuesta al usuario, pero sí lo registramos claramente
+      } else {
+        const data = await mlRes.json().catch(() => ({}))
+        console.log('[MailerLite] Subscriber synced OK. ID:', data?.data?.id)
       }
     } else {
-      console.warn('MAILERLITE_API_KEY not set — skipping MailerLite sync')
+      console.error('[MailerLite] MAILERLITE_API_KEY not set — skipping sync')
     }
 
     return NextResponse.json({ success: true })

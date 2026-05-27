@@ -177,9 +177,9 @@ export default function LeadMagnet() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full inline-flex items-center justify-center gap-2.5 bg-green-dark hover:bg-green-mid text-white font-semibold px-6 py-3.5 rounded-full text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed group"
+                  className="relative w-full inline-flex items-center justify-center gap-2.5 bg-green-dark hover:bg-green-mid text-white font-bold px-6 py-4 rounded-full text-[0.95rem] tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed overflow-hidden group hero-btn-shimmer"
                 >
-                  {status === 'loading' ? 'Enviando…' : 'Quiero la guía + mi descuento'}
+                  {status === 'loading' ? 'Enviando…' : '🎁 Quiero la guía + mi descuento'}
                   {status !== 'loading' && (
                     <IconArrow className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   )}
