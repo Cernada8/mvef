@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import AnimatedSection from './AnimatedSection'
 import { IconArrow, IconCheck } from './Icons'
@@ -41,46 +42,46 @@ export default function Programs() {
           <div className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col lg:flex-row min-h-[520px]">
 
             {/* ── Left visual panel ── */}
-            <div className="relative lg:w-[42%] flex-shrink-0 bg-gradient-to-br from-[#d6e4cc] via-[#c9dfc0] to-[#b8d0ac] flex flex-col justify-between p-8 lg:p-10 min-h-[280px] lg:min-h-0 overflow-hidden">
+            <div className="relative lg:w-[42%] flex-shrink-0 min-h-[320px] lg:min-h-0 overflow-hidden">
 
-              {/* Decorative roman numeral */}
-              <span
-                className="pointer-events-none select-none absolute -bottom-6 -right-4 font-serif font-bold leading-none text-green-dark/[0.08]"
-                style={{ fontSize: 'clamp(120px, 18vw, 200px)' }}
-                aria-hidden="true"
-              >
-                I
-              </span>
+              {/* Imagen de fondo */}
+              <Image
+                src="/full_glow_programa.jpg"
+                alt="Programa Full Glow — Mi Vida en Forma"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
 
-              {/* Decorative blob */}
-              <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-white/10 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+              {/* Overlay gradiente para legibilidad del texto */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
 
               {/* Tag */}
-              <div className="relative z-10">
-                <span className="inline-flex items-center gap-2 bg-green-dark text-white text-[0.65rem] font-bold tracking-widest px-4 py-1.5 rounded-full uppercase">
+              <div className="relative z-10 p-8 lg:p-10">
+                <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-[0.65rem] font-bold tracking-widest px-4 py-1.5 rounded-full uppercase border border-white/30">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-pale animate-pulse" />
                   Programa estrella
                 </span>
               </div>
 
-              {/* Name + tagline */}
-              <div className="relative z-10 mt-auto">
-                <p className="text-green-dark/60 text-xs font-semibold tracking-widest uppercase mb-2">Método 360° · Mujeres +35</p>
-                <h3 className="font-serif font-bold text-ink-dark leading-none mb-3"
+              {/* Name + tagline — encima de la imagen, abajo */}
+              <div className="absolute bottom-0 left-0 right-0 z-10 p-8 lg:p-10">
+                <p className="text-white/70 text-xs font-semibold tracking-widest uppercase mb-2">Método 360° · Mujeres +35</p>
+                <h3 className="font-serif font-bold text-white leading-none mb-3"
                   style={{ fontSize: 'clamp(2.6rem, 6vw, 4rem)' }}>
                   Full<br />
-                  <em className="not-italic text-green-dark">Glow</em>
+                  <em className="not-italic text-green-pale">Glow</em>
                 </h3>
-                <p className="text-ink-mid text-sm leading-relaxed max-w-[260px]">
+                <p className="text-white/80 text-sm leading-relaxed max-w-[260px]">
                   La transformación completa: cuerpo, mente y hábitos. Para quien quiere un cambio real, no temporal.
                 </p>
 
                 {/* Pillars */}
-                <div className="flex items-center gap-3 mt-5">
+                <div className="flex items-center gap-2 mt-5 flex-wrap">
                   {pillars.map((p) => (
-                    <div key={p.label} className="flex items-center gap-1.5 bg-white/60 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/40">
+                    <div key={p.label} className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/25">
                       <span className="text-sm">{p.icon}</span>
-                      <span className="text-xs font-semibold text-ink-dark">{p.label}</span>
+                      <span className="text-xs font-semibold text-white">{p.label}</span>
                     </div>
                   ))}
                 </div>
