@@ -18,7 +18,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen]   = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
+    const onScroll = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -28,10 +28,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-50 ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm py-3'
-            : 'py-5'
+            ? 'bg-white/97 backdrop-blur-md shadow-sm py-3 transition-all duration-200'
+            : 'py-5 transition-none'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-6">

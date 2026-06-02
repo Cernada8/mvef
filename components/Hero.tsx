@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="bg-gradient-to-br from-green-xpale via-warm to-beige-light relative overflow-hidden flex flex-col h-[100svh] md:h-auto md:min-h-screen md:flex-row md:items-center"
+      className="bg-gradient-to-br from-green-xpale via-warm to-beige-light relative overflow-x-hidden flex flex-col min-h-[100svh] md:h-auto md:min-h-screen md:flex-row md:items-center"
     >
       {/* Decorative blobs */}
       <div className="pointer-events-none absolute -top-1/4 -right-1/4 w-[700px] h-[700px] rounded-full bg-green-mid/[0.05]" />
@@ -19,7 +19,7 @@ export default function Hero() {
           MOBILE LAYOUT  (oculto en md+)
           Ocupa 100svh repartiendo espacio entre secciones
       ────────────────────────────────────────────── */}
-      <div className="md:hidden flex flex-col h-full pt-[72px] px-5 pb-5 relative z-10">
+      <div className="md:hidden flex flex-col min-h-[calc(100svh-0px)] pt-[72px] px-5 pb-6 relative z-10">
 
         {/* Badge */}
         <AnimatedSection className="mb-3 flex-shrink-0">
