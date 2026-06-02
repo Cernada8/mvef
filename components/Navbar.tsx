@@ -28,10 +28,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 inset-x-0 z-50 ${
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-200 ${
           scrolled
-            ? 'bg-white/97 backdrop-blur-md shadow-sm py-3 transition-all duration-200'
-            : 'py-5 transition-none'
+            ? 'bg-white shadow-sm py-3'
+            : 'bg-white/90 backdrop-blur-sm py-5'
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-6">
