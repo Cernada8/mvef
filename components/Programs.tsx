@@ -42,7 +42,7 @@ export default function Programs() {
           <div className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col lg:flex-row min-h-[520px]">
 
             {/* ── Left visual panel ── */}
-            <div className="relative lg:w-[42%] flex-shrink-0 min-h-[320px] lg:min-h-0 overflow-hidden">
+            <div className="relative lg:w-[42%] flex-shrink-0 h-[320px] lg:h-[560px] overflow-hidden">
 
               {/* Imagen de fondo */}
               <Image
