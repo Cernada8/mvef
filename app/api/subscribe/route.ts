@@ -33,35 +33,49 @@ export async function POST(req: NextRequest) {
     const API_KEY  = process.env.MAILERLITE_API_KEY
     const GROUP_ID = process.env.MAILERLITE_GROUP_ID
 
-    if (API_KEY) {
-      console.log('[MailerLite] Sending subscriber to group:', GROUP_ID)
+    if (API_KEY && GROUP_ID) {
+      const headers = {
+        'Content-Type':  'application/json',
+        'Authorization': `Bearer ${API_KEY}`,
+        'Accept':        'application/json',
+      }
 
-      // Crear/actualizar suscriptora
-      const mlRes = await fetch('https://connect.mailerlite.com/api/subscribers', {
+      // ── Paso 1: Crear/actualizar suscriptora (sin grupo todavía) ────────────
+      const createRes = await fetch('https://connect.mailerlite.com/api/subscribers', {
         method: 'POST',
-        headers: {
-          'Content-Type':  'application/json',
-          'Authorization': `Bearer ${API_KEY}`,
-          'Accept':        'application/json',
-        },
+        headers,
         body: JSON.stringify({
-          email: cleanEmail,
+          email:  cleanEmail,
           fields: { name: cleanName },
-          groups: GROUP_ID ? [GROUP_ID] : [],
           status: 'active',
         }),
       })
+      const createData = await createRes.json().catch(() => ({}))
+      const subscriberId = createData?.data?.id
+      console.log('[MailerLite] Subscriber upserted. ID:', subscriberId)
 
-      if (!mlRes.ok) {
-        const errBody = await mlRes.json().catch(() => ({}))
-        console.error('[MailerLite] Error:', mlRes.status, JSON.stringify(errBody))
-        // No bloqueamos la respuesta al usuario, pero sí lo registramos claramente
-      } else {
-        const data = await mlRes.json().catch(() => ({}))
-        console.log('[MailerLite] Subscriber synced OK. ID:', data?.data?.id)
+      if (subscriberId) {
+        // ── Paso 2: Sacar del grupo (si ya estaba) para que la automatización vuelva a dispararse
+        await fetch(`https://connect.mailerlite.com/api/subscribers/${subscriberId}/groups/${GROUP_ID}`, {
+          method: 'DELETE',
+          headers,
+        })
+
+        // ── Paso 3: Volver a añadir al grupo → dispara "subscriber joins group" siempre
+        const addRes = await fetch(`https://connect.mailerlite.com/api/subscribers/${subscriberId}/groups`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ groups: [GROUP_ID] }),
+        })
+        if (addRes.ok) {
+          console.log('[MailerLite] Added to group OK — automation will fire')
+        } else {
+          const err = await addRes.json().catch(() => ({}))
+          console.error('[MailerLite] Error adding to group:', err)
+        }
       }
     } else {
-      console.error('[MailerLite] MAILERLITE_API_KEY not set — skipping sync')
+      console.error('[MailerLite] API_KEY or GROUP_ID not set — skipping sync')
     }
 
     return NextResponse.json({ success: true })

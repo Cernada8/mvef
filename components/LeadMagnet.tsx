@@ -110,8 +110,7 @@ export default function LeadMagnet() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 2l2.09 6.26L20 9.27l-5 4.87L16.18 21 12 17.77 7.82 21 9 14.14 4 9.27l5.91-.91z" />
               </svg>
               <p className="text-sm text-white/80 leading-tight">
-                Además recibirás un <strong className="text-white">10% de descuento</strong> exclusivo
-                para usar en cualquier programa.
+                Descarga la guía y empieza a ver cambios <strong className="text-white">desde la primera semana</strong>.
               </p>
             </div>
           </AnimatedSection>
@@ -128,9 +127,9 @@ export default function LeadMagnet() {
                   Revisa tu bandeja de entrada — la guía llegará en los próximos minutos.
                 </p>
                 <div className="bg-green-xpale border border-green-mid/20 rounded-2xl px-6 py-5">
-                  <p className="text-xs text-ink-light uppercase tracking-widest font-semibold mb-2">Tu código de descuento</p>
-                  <p className="font-serif text-3xl font-bold text-green-dark tracking-wider">BIENVENIDA10</p>
-                  <p className="text-xs text-ink-light mt-2">10% de descuento en cualquier programa</p>
+                  <p className="text-xs text-ink-light uppercase tracking-widest font-semibold mb-2">Tu siguiente paso</p>
+                  <p className="font-serif text-lg font-bold text-green-dark">Revisa tu bandeja de entrada 📩</p>
+                  <p className="text-xs text-ink-light mt-2">La guía llega en los próximos minutos</p>
                 </div>
               </div>
             ) : (
@@ -179,7 +178,7 @@ export default function LeadMagnet() {
                   disabled={status === 'loading'}
                   className="relative w-full inline-flex items-center justify-center gap-2.5 bg-green-dark hover:bg-green-mid text-white font-bold px-6 py-4 rounded-full text-[0.95rem] tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed overflow-hidden group hero-btn-shimmer"
                 >
-                  {status === 'loading' ? 'Enviando…' : '🎁 Quiero la guía + mi descuento'}
+                  {status === 'loading' ? 'Enviando…' : '🎁 Quiero mi guía gratis'}
                   {status !== 'loading' && (
                     <IconArrow className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   )}
