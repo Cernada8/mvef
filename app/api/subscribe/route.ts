@@ -18,12 +18,16 @@ export async function POST(req: NextRequest) {
     const cleanEmail = email.trim().toLowerCase()
     const cleanName  = name.trim()
 
-    // ── 1. Guardar en base de datos ──────────────────────────────────────────
-    await prisma.subscriber.upsert({
-      where:  { email: cleanEmail },
-      update: { name: cleanName },
-      create: { name: cleanName, email: cleanEmail, source: 'lead-magnet' },
-    })
+    // ── 1. Guardar en base de datos (opcional — no bloquea el flujo) ─────────
+    try {
+      await prisma.subscriber.upsert({
+        where:  { email: cleanEmail },
+        update: { name: cleanName },
+        create: { name: cleanName, email: cleanEmail, source: 'lead-magnet' },
+      })
+    } catch (dbErr) {
+      console.error('[DB] Error saving subscriber (non-fatal):', dbErr)
+    }
 
     // ── 2. Enviar a MailerLite ───────────────────────────────────────────────
     const API_KEY  = process.env.MAILERLITE_API_KEY
