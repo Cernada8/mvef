@@ -42,7 +42,7 @@ export default function Programs() {
           <div className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col lg:flex-row min-h-[520px]">
 
             {/* ── Left visual panel ── */}
-            <div className="relative lg:w-[42%] flex-shrink-0 h-[320px] lg:h-[560px] overflow-hidden">
+            <div className="relative lg:w-[42%] flex-shrink-0 h-[460px] lg:h-[560px] overflow-hidden flex flex-col justify-between">
 
               {/* Imagen de fondo */}
               <Image
@@ -54,30 +54,29 @@ export default function Programs() {
               />
 
               {/* Overlay gradiente para legibilidad del texto */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/40" />
 
-              {/* Tag */}
-              <div className="relative z-10 p-8 lg:p-10">
+              {/* Tag — arriba */}
+              <div className="relative z-10 p-6 lg:p-10">
                 <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white text-[0.65rem] font-bold tracking-widest px-4 py-1.5 rounded-full uppercase border border-white/30">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-pale animate-pulse" />
                   Programa estrella
                 </span>
               </div>
 
-              {/* Name + tagline — encima de la imagen, abajo */}
-              <div className="absolute bottom-0 left-0 right-0 z-10 p-8 lg:p-10">
+              {/* Name + tagline — abajo, usando flex en lugar de absolute */}
+              <div className="relative z-10 p-6 lg:p-10">
                 <p className="text-white/70 text-xs font-semibold tracking-widest uppercase mb-2">Método 360° · Mujeres +35</p>
-                <h3 className="font-serif font-bold text-white leading-none mb-3"
-                  style={{ fontSize: 'clamp(2.6rem, 6vw, 4rem)' }}>
+                <h3 className="font-serif font-bold text-white leading-none mb-3 text-[2.4rem] lg:text-[3.5rem]">
                   Full<br />
                   <em className="not-italic text-green-pale">Glow</em>
                 </h3>
-                <p className="text-white/80 text-sm leading-relaxed max-w-[260px]">
+                <p className="text-white/80 text-sm leading-relaxed max-w-[280px]">
                   La transformación completa: cuerpo, mente y hábitos. Para quien quiere un cambio real, no temporal.
                 </p>
 
                 {/* Pillars */}
-                <div className="flex items-center gap-2 mt-5 flex-wrap">
+                <div className="flex items-center gap-2 mt-4 flex-wrap">
                   {pillars.map((p) => (
                     <div key={p.label} className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/25">
                       <span className="text-sm">{p.icon}</span>

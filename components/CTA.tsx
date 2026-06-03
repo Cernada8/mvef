@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import AnimatedSection from './AnimatedSection'
-import { IconArrow } from './Icons'
+import ContactForm from './ContactForm'
 
 export default function CTA() {
   return (
@@ -8,15 +7,18 @@ export default function CTA() {
       id="contacto"
       className="py-24 lg:py-32 bg-green-dark relative overflow-hidden"
     >
-      {/* Subtle texture */}
+      {/* Textura sutil */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}
       />
       <div className="pointer-events-none absolute -top-1/2 -right-1/4 w-[600px] h-[600px] rounded-full bg-green-mid/20" />
+      <div className="pointer-events-none absolute -bottom-1/3 -left-1/4 w-[400px] h-[400px] rounded-full bg-green-mid/10" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-8 relative z-10">
-        <div className="max-w-2xl">
-          <AnimatedSection>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+          {/* ── Texto izquierda ── */}
+          <AnimatedSection className="lg:pt-6">
             <span className="section-label" style={{ color: 'rgba(255,255,255,.4)' }}>
               Empieza hoy
             </span>
@@ -25,27 +27,35 @@ export default function CTA() {
               <br />
               <em className="not-italic text-white/70">joven y llena de energía?</em>
             </h2>
-            <p className="text-white/65 text-[1.02rem] leading-relaxed mb-10 max-w-lg">
-              Da el primer paso. Rellena el formulario y me pongo en contacto contigo
-              en menos de 24 horas.
+            <p className="text-white/65 text-[1.02rem] leading-relaxed mb-8 max-w-md">
+              Responde unas preguntas rápidas y me pongo en contacto contigo personalmente en menos de 24 horas.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start gap-4">
-              <Link
-                href="https://wa.me/34000000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-white hover:bg-green-pale text-green-dark font-semibold px-7 py-3.5 rounded-full text-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl group"
-              >
-                Quiero empezar mi transformación
-                <IconArrow className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-start gap-3">
+                <span className="text-xl mt-0.5">✅</span>
+                <p className="text-white/70 text-sm leading-relaxed">Plan 100% personalizado a tu cuerpo y ritmo de vida</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-xl mt-0.5">✅</span>
+                <p className="text-white/70 text-sm leading-relaxed">Sin dietas extremas ni horas interminables en el gym</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-xl mt-0.5">✅</span>
+                <p className="text-white/70 text-sm leading-relaxed">Acompañamiento directo con Yerlina en cada paso</p>
+              </div>
             </div>
 
-            <p className="mt-6 text-xs text-white/35 tracking-wide">
+            <p className="mt-8 text-xs text-white/35 tracking-wide">
               Sin compromiso · Sin presión · Solo una conversación
             </p>
           </AnimatedSection>
+
+          {/* ── Formulario derecha ── */}
+          <AnimatedSection delay={120}>
+            <ContactForm />
+          </AnimatedSection>
+
         </div>
       </div>
     </section>
