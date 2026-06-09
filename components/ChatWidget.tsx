@@ -169,8 +169,8 @@ export default function ChatWidget() {
           <div className="bg-green-dark px-5 py-4 flex items-center gap-3 flex-shrink-0">
             <IconAvatar />
             <div>
-              <p className="text-white font-semibold text-sm leading-tight">Mi Vida en Forma ✨</p>
-              <p className="text-white/55 text-[0.65rem] mt-0.5">Asistente de Yerlina</p>
+              <p className="text-white font-semibold text-sm leading-tight">Yerlina ✨</p>
+              <p className="text-white/55 text-[0.65rem] mt-0.5">Mi Vida en Forma</p>
             </div>
             <button
               onClick={() => setOpen(false)}
@@ -191,7 +191,7 @@ export default function ChatWidget() {
               <IconAvatar small />
               <div className="bg-white rounded-2xl rounded-tl-sm px-3.5 py-2.5 shadow-sm max-w-[235px]">
                 <p className="text-sm text-ink-dark leading-relaxed">
-                  ¡Hola! 👋 Soy el asistente de Yerlina. ¿Tienes alguna pregunta sobre los programas?
+                  ¡Hola! Soy Yerlina 👋 ¿Tienes alguna pregunta sobre mis programas? Con mucho gusto te ayudo ❤️
                 </p>
               </div>
             </div>
