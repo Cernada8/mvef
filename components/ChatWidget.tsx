@@ -1,11 +1,161 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, Fragment } from 'react'
 
 type Message = { role: 'user' | 'assistant'; content: string }
 
-const MAX_MSGS   = 20
-const STORE_KEY  = 'mvef_chat_used'
+const MAX_MSGS  = 20
+const STORE_KEY = 'mvef_chat_used'
+
+// ─── Render de texto enriquecido ───────────────────────────────────────────────
+// Detecta patrones en el texto del bot y los convierte en links/chips bonitos
+
+const PATTERNS = [
+  // Número de teléfono / WhatsApp (610 06 06 68 o variantes)
+  {
+    regex: /610[\s\-]?0?6[\s\-]?0?6[\s\-]?68/g,
+    render: (match: string, i: number) => (
+      <a
+        key={`wa-${i}`}
+        href="https://wa.me/34610060668"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 bg-green-pale text-green-dark font-semibold px-2.5 py-0.5 rounded-full text-xs hover:bg-green-mid hover:text-white transition-colors mx-0.5"
+      >
+        💬 {match}
+      </a>
+    ),
+  },
+  // Instagram @mivida_enforma
+  {
+    regex: /@mivida_enforma/g,
+    render: (_: string, i: number) => (
+      <a
+        key={`ig-${i}`}
+        href="https://instagram.com/mivida_enforma"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 bg-pink-50 text-pink-600 font-semibold px-2.5 py-0.5 rounded-full text-xs hover:bg-pink-100 transition-colors mx-0.5"
+      >
+        📸 @mivida_enforma
+      </a>
+    ),
+  },
+  // Markdown links [texto](url)
+  {
+    regex: /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
+    render: (match: string, i: number) => {
+      const m = match.match(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/)
+      if (!m) return <span key={i}>{match}</span>
+      return (
+        <a
+          key={`link-${i}`}
+          href={m[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 bg-green-pale text-green-dark font-semibold px-2.5 py-0.5 rounded-full text-xs hover:bg-green-mid hover:text-white transition-colors mx-0.5"
+        >
+          🔗 {m[1]}
+        </a>
+      )
+    },
+  },
+]
+
+function RichText({ text }: { text: string }) {
+  // Combinar todos los patrones en un único regex
+  const combinedRegex = new RegExp(
+    PATTERNS.map(p => p.regex.source).join('|'),
+    'g'
+  )
+
+  const nodes: React.ReactNode[] = []
+  let lastIndex = 0
+  let matchCount = 0
+
+  text.replace(combinedRegex, (match, ...args) => {
+    const offset = args[args.length - 2] as number
+    // Texto antes del match
+    if (offset > lastIndex) {
+      nodes.push(text.slice(lastIndex, offset))
+    }
+    // Encontrar qué patrón coincidió
+    for (const pattern of PATTERNS) {
+      pattern.regex.lastIndex = 0
+      if (pattern.regex.test(match)) {
+        nodes.push(pattern.render(match, matchCount++))
+        break
+      }
+    }
+    lastIndex = offset + match.length
+    return match
+  })
+
+  // Texto restante
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex))
+  }
+
+  // Renderizar con saltos de línea
+  const withBreaks: React.ReactNode[] = []
+  nodes.forEach((node, i) => {
+    if (typeof node === 'string') {
+      node.split('\n').forEach((line, j, arr) => {
+        withBreaks.push(line)
+        if (j < arr.length - 1) withBreaks.push(<br key={`br-${i}-${j}`} />)
+      })
+    } else {
+      withBreaks.push(node)
+    }
+  })
+
+  return <>{withBreaks}</>
+}
+
+// ─── Chips de acción rápida bajo mensajes del bot ──────────────────────────────
+function ActionChips({ text }: { text: string }) {
+  const hasPhone   = /610/.test(text)
+  const hasForm    = /formulario/i.test(text)
+  const hasInsta   = /instagram/i.test(text)
+
+  if (!hasPhone && !hasForm && !hasInsta) return null
+
+  return (
+    <div className="flex flex-wrap gap-1.5 mt-2.5">
+      {hasPhone && (
+        <a
+          href="https://wa.me/34610060668"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 bg-[#25D366] text-white text-[0.7rem] font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition-opacity shadow-sm"
+        >
+          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsApp
+        </a>
+      )}
+      {hasForm && (
+        <a
+          href="#contacto"
+          className="inline-flex items-center gap-1.5 bg-green-dark text-white text-[0.7rem] font-bold px-3 py-1.5 rounded-full hover:bg-green-mid transition-colors shadow-sm"
+        >
+          📝 Ir al formulario
+        </a>
+      )}
+      {hasInsta && !/@mivida_enforma/.test(text) && (
+        <a
+          href="https://instagram.com/mivida_enforma"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[0.7rem] font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition-opacity shadow-sm"
+        >
+          📸 Instagram
+        </a>
+      )}
+    </div>
+  )
+}
 
 // ─── Iconos ────────────────────────────────────────────────────────────────────
 const IconChat = () => (
@@ -65,8 +215,13 @@ function Bubble({ msg }: { msg: Message }) {
   return (
     <div className="flex gap-2.5 items-end">
       <IconAvatar small />
-      <div className="bg-white rounded-2xl rounded-tl-sm px-3.5 py-2.5 shadow-sm max-w-[235px]">
-        <p className="text-sm text-ink-dark leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+      <div className="max-w-[235px]">
+        <div className="bg-white rounded-2xl rounded-tl-sm px-3.5 py-2.5 shadow-sm">
+          <p className="text-sm text-ink-dark leading-relaxed">
+            <RichText text={msg.content} />
+          </p>
+        </div>
+        <ActionChips text={msg.content} />
       </div>
     </div>
   )
