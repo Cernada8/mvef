@@ -62,10 +62,9 @@ export async function POST(req: NextRequest) {
         })
 
         // ── Paso 3: Volver a añadir al grupo → dispara "subscriber joins group" siempre
-        const addRes = await fetch(`https://connect.mailerlite.com/api/subscribers/${subscriberId}/groups`, {
+        const addRes = await fetch(`https://connect.mailerlite.com/api/subscribers/${subscriberId}/groups/${GROUP_ID}`, {
           method: 'POST',
           headers,
-          body: JSON.stringify({ groups: [GROUP_ID] }),
         })
         if (addRes.ok) {
           console.log('[MailerLite] Added to group OK — automation will fire')

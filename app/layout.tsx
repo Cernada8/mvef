@@ -16,7 +16,7 @@ const inter = Inter({
   display: 'swap',
 })
 
-const BASE_URL = 'https://www.mvf.coach'
+const BASE_URL = 'https://www.mividaenforma.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -127,8 +127,8 @@ const personSchema = {
   name:        'Yerlina',
   jobTitle:    'Coach de Nutrición y Entrenamiento Femenino',
   description: 'Coach online especializada en mujeres +35 y +40. Más de 20 años de experiencia.',
-  url:         'https://www.mvf.coach',
-  image:       'https://www.mvf.coach/about-yerlina.jpg',
+  url:         'https://www.mividaenforma.com',
+  image:       'https://www.mividaenforma.com/about-yerlina.jpg',
   sameAs:      ['https://www.instagram.com/mivida_enforma/'],
 }
 
@@ -137,9 +137,9 @@ const businessSchema = {
   '@type':     ['HealthAndBeautyBusiness', 'ProfessionalService'],
   name:        'Mi Vida en Forma',
   description: 'Coaching online especializado en mujeres +35. Nutrición antiinflamatoria, entrenamiento personalizado y coaching de hábitos.',
-  url:         'https://www.mvf.coach/',
-  logo:        'https://www.mvf.coach/logo-mvef.png',
-  image:       'https://www.mvf.coach/foto-yerlina-principal.png',
+  url:         'https://www.mividaenforma.com/',
+  logo:        'https://www.mividaenforma.com/logo-mvef.png',
+  image:       'https://www.mividaenforma.com/foto-yerlina-principal.png',
   email:       'hola@mvf.coach',
   founder:     { '@type': 'Person', name: 'Yerlina' },
   areaServed:  { '@type': 'Place', name: 'Worldwide' },
@@ -150,7 +150,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type':    'WebSite',
   name:       'Mi Vida en Forma',
-  url:        'https://www.mvf.coach',
+  url:        'https://www.mividaenforma.com',
   inLanguage: 'es',
 }
 

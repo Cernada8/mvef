@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://www.mvf.coach/sitemap.xml',
-    host: 'https://www.mvf.coach',
+    sitemap: 'https://www.mividaenforma.com/sitemap.xml',
+    host: 'https://www.mividaenforma.com',
   }
 }
