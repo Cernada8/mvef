@@ -78,8 +78,9 @@ export default function ContactForm() {
 
   const set = (key: keyof FormData, val: string) => setData(d => ({ ...d, [key]: val }))
 
-  const next = () => setStep(s => Math.min(s + 1, TOTAL_STEPS))
-  const prev = () => setStep(s => Math.max(s - 1, 1))
+  const next      = () => setStep(s => Math.min(s + 1, TOTAL_STEPS))
+  const nextAuto  = () => setTimeout(() => setStep(s => Math.min(s + 1, TOTAL_STEPS)), 300)
+  const prev      = () => setStep(s => Math.max(s - 1, 1))
 
   /* Cuando eligen "No me siento preparada" saltamos a un step especial */
   const pickInversion = (val: string) => {
@@ -161,7 +162,7 @@ export default function ContactForm() {
             <h3 className="font-serif text-xl text-ink-dark mb-6 text-center">¿Cuál es tu edad?</h3>
             <div className="flex flex-col gap-3">
               {edadOpts.map(o => (
-                <OptionButton key={o} label={o} selected={data.edad === o} onClick={() => set('edad', o)} />
+                <OptionButton key={o} label={o} selected={data.edad === o} onClick={() => { set('edad', o); nextAuto() }} />
               ))}
             </div>
           </div>
@@ -173,7 +174,7 @@ export default function ContactForm() {
             <h3 className="font-serif text-xl text-ink-dark mb-6 text-center">¿Cuál es tu objetivo?</h3>
             <div className="grid grid-cols-2 gap-3">
               {objetivoOpts.map(o => (
-                <OptionButton key={o} label={o} selected={data.objetivo === o} onClick={() => set('objetivo', o)} />
+                <OptionButton key={o} label={o} selected={data.objetivo === o} onClick={() => { set('objetivo', o); nextAuto() }} />
               ))}
             </div>
           </div>
@@ -187,7 +188,7 @@ export default function ContactForm() {
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {bloqueoOpts.map(o => (
-                <OptionButton key={o} label={o} selected={data.bloqueo === o} onClick={() => set('bloqueo', o)} />
+                <OptionButton key={o} label={o} selected={data.bloqueo === o} onClick={() => { set('bloqueo', o); nextAuto() }} />
               ))}
             </div>
           </div>
@@ -290,14 +291,19 @@ export default function ContactForm() {
           </form>
         )}
 
-        {/* ── Navegación (steps 1-4) ── */}
-        {step < 5 && (
+        {/* ── Navegación (steps 1-3: sólo atrás; step 4: atrás + continuar) ── */}
+        {step >= 1 && step <= 3 && step > 1 && (
+          <div className="mt-6">
+            <button onClick={prev} className="text-ink-light text-sm hover:text-ink-dark transition-colors flex items-center gap-1">
+              ← Atrás
+            </button>
+          </div>
+        )}
+        {step === 4 && (
           <div className="flex items-center justify-between mt-6">
-            {step > 1 ? (
-              <button onClick={prev} className="text-ink-light text-sm hover:text-ink-dark transition-colors flex items-center gap-1">
-                ← Atrás
-              </button>
-            ) : <div />}
+            <button onClick={prev} className="text-ink-light text-sm hover:text-ink-dark transition-colors flex items-center gap-1">
+              ← Atrás
+            </button>
             <button
               onClick={next}
               disabled={!canNext()}

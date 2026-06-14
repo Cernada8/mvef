@@ -9,23 +9,17 @@ const nav = [
   { href: '#resultados', label: 'Resultados' },
 ]
 
-const programs = [
-  { href: '#programas', label: 'Desinfláma'       },
-  { href: '#programas', label: 'Define & Tonifica' },
-  { href: '#programas', label: 'Transforma 360°'  },
-]
-
 const contact = [
-  { href: '#contacto',                                      label: 'Empieza hoy'   },
-  { href: 'https://www.instagram.com/mivida_enforma/',      label: '@mivida_enforma'},
-  { href: 'mailto:hola@mvf.coach',                          label: 'hola@mvf.coach' },
+  { href: '#contacto',                                      label: 'Empieza hoy'                    },
+  { href: 'https://www.instagram.com/mivida_enforma/',      label: '@mivida_enforma'                 },
+  { href: 'mailto:yerlina@email.mividaenforma.com',         label: 'yerlina@email.mividaenforma.com' },
 ]
 
 export default function Footer() {
   return (
     <footer className="bg-ink-dark pt-16 pb-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
 
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
@@ -52,22 +46,6 @@ export default function Footer() {
             <ul className="space-y-3">
               {nav.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-white/55 hover:text-white transition-colors duration-200">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Programs */}
-          <div>
-            <h5 className="text-[0.65rem] font-semibold tracking-[0.16em] uppercase text-white/30 mb-5">
-              Programas
-            </h5>
-            <ul className="space-y-3">
-              {programs.map((l) => (
-                <li key={l.label}>
                   <Link href={l.href} className="text-sm text-white/55 hover:text-white transition-colors duration-200">
                     {l.label}
                   </Link>
