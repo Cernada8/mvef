@@ -9,7 +9,6 @@ import HowItWorks    from '@/components/HowItWorks'
 import LeadMagnet    from '@/components/LeadMagnet'
 import Features      from '@/components/Features'
 import Testimonials  from '@/components/Testimonials'
-import Shop          from '@/components/Shop'
 import About         from '@/components/About'
 import FAQ           from '@/components/FAQ'
 import CTA           from '@/components/CTA'
@@ -30,7 +29,6 @@ export default function Home() {
         <LeadMagnet />      {/* Guía gratis + 10% descuento */}
         <Features />
         <Testimonials />
-        <Shop />            {/* Tienda de productos digitales */}
         <About />
         <FAQ />
         <CTA />
