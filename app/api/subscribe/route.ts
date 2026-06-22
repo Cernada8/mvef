@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/bpGBWdswRdohsRPKsY45/webhook-trigger/72f1d451-a5bf-4ac9-b172-d2871244d55f'
+const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/bpGBWdswRdohsRPKsY45/webhook-trigger/fa767fd5-9d89-4f2e-ab1f-6aedf22cae29'
 
 export async function POST(req: NextRequest) {
   try {
